@@ -15,28 +15,32 @@ function setupInputOnce() {
 
 async function handleInput(event) {
   switch (event.key) {
-    case "ArrowUp" || "W":
+    case "ArrowUp":
+    case "W":
       if (!canMoveUp()) {
         setupInputOnce();
         return;
       }
       await moveUp();
       break;
-    case "ArrowDown" || "S":
+    case "ArrowDown":
+    case "S":
       if (!canMoveDown()) {
         setupInputOnce();
         return;
       }
       await moveDown();
       break;
-    case "ArrowLeft" || "A":
+    case "ArrowLeft":
+    case "A":
       if (!canMoveLeft()) {
         setupInputOnce();
         return;
       }
       await moveLeft();
       break;
-    case "ArrowRight" || "D":
+    case "ArrowRight":
+    case "D":
       if (!canMoveRight()) {
         setupInputOnce();
         return;
