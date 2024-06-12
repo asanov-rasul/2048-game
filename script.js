@@ -2,18 +2,16 @@ import { Grid } from "./grid.js";
 import { Tile } from "./tile.js";
 
 const gameBoard = document.getElementById("game-board");
-var startX, startY;
+let startX, startY;
 
 const grid = new Grid(gameBoard);
 grid.getRandomEmptyCell().linkTile(new Tile(gameBoard));
 grid.getRandomEmptyCell().linkTile(new Tile(gameBoard));
 setupInputOnce();
 
-
 function setupInputOnce() {
   window.addEventListener("keydown", handleInput, { once: true });
 }
-
 
 async function handleInput(event) {
   switch (event.code) {
@@ -100,18 +98,15 @@ document.addEventListener('touchend', function (e) {
   }
 });
 
-  
-  const newTile = new Tile(gameBoard);
-  grid.getRandomEmptyCell().linkTile(newTile);
+const newTile = new Tile(gameBoard);
+grid.getRandomEmptyCell().linkTile(newTile);
 
-  if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
-    await newTile.waitForAnimationEnd()
-    alert("Try again!")
-    return;
-  }
-
-  setupInputOnce();
+if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
+  await newTile.waitForAnimationEnd();
+  alert("Try again!");
 }
+
+setupInputOnce();
 
 async function moveUp() {
   await slideTiles(grid.cellsGroupedByColumn);
@@ -136,7 +131,7 @@ async function slideTiles(groupedCells) {
 
   await Promise.all(promises);
   grid.cells.forEach(cell => {
-    cell.hasTileForMerge() && cell.mergeTiles()
+    cell.hasTileForMerge() && cell.mergeTiles();
   });
 }
 
