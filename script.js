@@ -13,46 +13,8 @@ setupInputOnce();
 function setupInputOnce() {
   window.addEventListener("keydown", handleInput, { once: true });
 }
-document.addEventListener('touchstart', function (e) {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-        });
 
-        document.addEventListener('touchend', function (e) {
-            var endX = e.changedTouches[0].clientX;
-            var endY = e.changedTouches[0].clientY;
-            var deltaX = startX - endX;
-            var deltaY = startY - endY;
-            var minSwipeLength = 50;
 
-            if (Math.abs(deltaX) > minSwipeLength || Math.abs(deltaY) > minSwipeLength) {
-                if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                    if (deltaX > 0) {
-                        if (!canMoveLeft()) {
-                          setupInputOnce();
-                          return;
-                        }
-                    } else {
-                        if (!canMoveRight()) {
-                          setupInputOnce();
-                          return;
-                        }
-                    }
-                } else {
-                    if (deltaY > 0) {
-                        if (!canMoveUp()) {
-                          setupInputOnce();
-                          return;
-                        }
-                    } else {
-                        if (!canMoveDown()) {
-                          setupInputOnce();
-                          return;
-                        }
-                    }
-                }
-            }
-        });
 async function handleInput(event) {
   switch (event.key) {
     case "ArrowUp":
