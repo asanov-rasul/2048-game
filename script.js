@@ -108,7 +108,6 @@ document.addEventListener('touchend', function (e) {
 });
 
   setupInputOnce();
-}
 
 async function moveUp() {
   await slideTiles(grid.cellsGroupedByColumn);
