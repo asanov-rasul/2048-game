@@ -54,6 +54,17 @@ async function handleInput(event) {
       return;
   }
 }
+
+
+  const newTile = new Tile(gameBoard);
+  grid.getRandomEmptyCell().linkTile(newTile);
+
+  if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
+    await newTile.waitForAnimationEnd()
+    alert("Try again!")
+    return;
+  }
+
 document.addEventListener('touchstart', function (e) {
   startX = e.touches[0].clientX;
   startY = e.touches[0].clientY;
@@ -96,16 +107,6 @@ document.addEventListener('touchend', function (e) {
     }
   }
 });
-
-
-  const newTile = new Tile(gameBoard);
-  grid.getRandomEmptyCell().linkTile(newTile);
-
-  if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
-    await newTile.waitForAnimationEnd()
-    alert("Try again!")
-    return;
-  }
 
   setupInputOnce();
 }
