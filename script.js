@@ -32,14 +32,12 @@ document.addEventListener('touchstart', function (e) {
                           setupInputOnce();
                           return;
                         }
-                        await moveLeft();
                         break;
                     } else {
                         if (!canMoveRight()) {
                           setupInputOnce();
                           return;
                         }
-                        await moveRight();
                         break;
                     }
                 } else {
@@ -48,14 +46,12 @@ document.addEventListener('touchstart', function (e) {
                           setupInputOnce();
                           return;
                         }
-                        await moveUp();
                         break;
                     } else {
                         if (!canMoveDown()) {
                           setupInputOnce();
                           return;
                         }
-                        await moveDown();
                         break;
                     }
                 }
