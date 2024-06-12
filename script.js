@@ -62,7 +62,6 @@ async function handleInput(event) {
   if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
     await newTile.waitForAnimationEnd()
     alert("Try again!")
-    return;
   }
 
 document.addEventListener('touchstart', function (e) {
