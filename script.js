@@ -2,7 +2,6 @@ import { Grid } from "./grid.js";
 import { Tile } from "./tile.js";
 
 const gameBoard = document.getElementById("game-board");
-var startX, startY;
 
 const grid = new Grid(gameBoard);
 grid.getRandomEmptyCell().linkTile(new Tile(gameBoard));
