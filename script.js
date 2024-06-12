@@ -32,13 +32,11 @@ document.addEventListener('touchstart', function (e) {
                           setupInputOnce();
                           return;
                         }
-                        break;
                     } else {
                         if (!canMoveRight()) {
                           setupInputOnce();
                           return;
                         }
-                        break;
                     }
                 } else {
                     if (deltaY > 0) {
@@ -46,13 +44,11 @@ document.addEventListener('touchstart', function (e) {
                           setupInputOnce();
                           return;
                         }
-                        break;
                     } else {
                         if (!canMoveDown()) {
                           setupInputOnce();
                           return;
                         }
-                        break;
                     }
                 }
             }
