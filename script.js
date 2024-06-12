@@ -37,8 +37,8 @@ async function handleInput(event) {
       await moveLeft();
       break;
     case "ArrowRight":
+      console.log("hello")
       if (!canMoveRight()) {
-        console.log('hello');
         setupInputOnce();
         return;
       }
