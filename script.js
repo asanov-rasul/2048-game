@@ -52,9 +52,9 @@ async function handleInput(event) {
     default:
       setupInputOnce();
       return;
+  }
 
-      
-       document.addEventListener('touchstart', function (e) {
+  document.addEventListener('touchstart', function (e) {
             startX = e.touches[0].clientX;
             startY = e.touches[0].clientY;
         });
@@ -102,8 +102,8 @@ async function handleInput(event) {
                 }
             }
         });
-  }
 
+  
   const newTile = new Tile(gameBoard);
   grid.getRandomEmptyCell().linkTile(newTile);
 
